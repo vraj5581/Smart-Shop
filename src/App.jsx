@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 import ProductDetails from "./pages/ProductDetails";
+import NotFound from "./pages/NotFound";
 
 function App() {
   // Initialize state from localStorage to avoid redirect on refresh
@@ -39,6 +40,9 @@ function App() {
         />
 
         <Route path="/" element={user ? <Home /> : <Navigate to="/login" />} />
+
+        {/* Catch-all Route for 404 */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
